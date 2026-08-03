@@ -19,14 +19,27 @@
                 <a href="#movie" class="nav__button"> Find a Movie</a>
                 <a href="#contact" class="nav__button nav__button--primary"> Contact</a>
             </nav>
-            <h1>Browse Our Movies</h1>
-            <form action="/search-results" method="GET" role="search">
-                <label for="site-search" class="visually-hidden"></label>
-                <input type="search" id="site-search" name="q" placeholder="Search by genre" required>
-                <button class="search__btn" type="submit">Search</button>
-            </form>
         </header>
+        <div class="landing__content">
+            <h1>Browse Our Movies</h1>
+            <form class="input__wrap" action="/search-results" method="GET" role="search">
+                <input type="search" id="site-search" name="q" placeholder="Search by genre" required>
+                <button class="search__btn" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
     </section>
+
+    <main>
+        <section id="searched">
+            <div class="container">
+                <div class="row">
+
+                </div>
+            </div>
+        </section>
+    </main>
     
 </body>
 </html>
