@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+/* 
+
+NAVIGATION 
+
+*/
+
+nav {
+  height: 100%;
+  background-image: url(./Assets/theater-stage.avif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.nav__container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  flex-direction: row;
+}
+
+.search__btn {
+  border-radius: 20%;
+  background-color: red;
+  color: #fff;
+  border: none;
+}
+
+.nav__link {
+  margin-left: 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.nav__link--primary {
+  border: 2px solid #1a093d;
+  border-radius: 4px;
+}
+
+.logo__img--wrapper {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100px;
+}
+
+
+
