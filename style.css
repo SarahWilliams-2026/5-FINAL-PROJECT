@@ -33,21 +33,22 @@ h1 {
 
 .animated-underline {
   position: relative;
+  display: inline-block;
   text-decoration: none;
   color: #fff;
 }
 
 .animated-underline::after {
-  content '';
+  content: "";
   position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -2px;
   left: 0;
-  background-color: #e1dbdb;
-  transform-origin: bottom left;
-  transition: transform 0.25s ease out;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
 }
 
 .animated-underline:hover::after {
@@ -97,6 +98,11 @@ LANDING
   border: 2px solid #070509;
   border-radius: 4px;
   background-color: #070509;
+}
+
+.nav__button--primary:hover {
+  background-color:#22192b;
+  transition: transform 300ms ease;
 }
 
 .logo {
