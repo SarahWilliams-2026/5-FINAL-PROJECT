@@ -10,26 +10,22 @@
 </head>
 <body>
     <section id="landing">
-        <nav>
-            <div class="nav__container">
-                <div class="nav__row">
-                    <figure class="logo__img__wrapper">
-                        <img class="logo" src="./Assets/popcorn__logo.jpg" alt="">
-                    </figure>
-                    <ul class="nav__links">
-                    <li><a href="#" class="nav__link"> Home</a></li>
-                    <li><a href="#" class="nav__link"> Find a Movie</a></li>
-                    <li><a href="#" class="nav__link nav__link--primary"> Contact</a></li>
-                    </ul>
-                    <h1>Browse Our Movies</h1>
-                    <form action="/search-results" method="GET" role="search">
-                        <label for="site-search" class="visually-hidden"></label>
-                        <input type="search" id="site-search" name="q" placeholder="Search by genre" required>
-                        <button class="search__btn" type="submit">Search</button>
-                    </form>
-                </div>
+        <header class="navbar">
+            <div class="logo">
+                <img class="logo" src="./Assets/popcorn__logo.jpg" alt="My Logo">
             </div>
-        </nav>
+            <nav class="nav__buttons">
+                <a href="#home" class="nav__button"> Home</a>
+                <a href="#movie" class="nav__button"> Find a Movie</a>
+                <a href="#contact" class="nav__button nav__button--primary"> Contact</a>
+            </nav>
+            <h1>Browse Our Movies</h1>
+            <form action="/search-results" method="GET" role="search">
+                <label for="site-search" class="visually-hidden"></label>
+                <input type="search" id="site-search" name="q" placeholder="Search by genre" required>
+                <button class="search__btn" type="submit">Search</button>
+            </form>
+        </header>
     </section>
     
 </body>

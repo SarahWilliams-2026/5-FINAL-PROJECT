@@ -22,7 +22,7 @@ NAVIGATION
 
 */
 
-nav {
+.navbar {
   height: 100%;
   background-image: url(./Assets/theater-stage.avif);
   background-size: cover;
@@ -32,7 +32,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
 }
 
 .nav__container {
@@ -49,8 +48,13 @@ nav {
   border: none;
 }
 
-.nav__link {
-  margin-left: 16px;
+.nav__buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav__button {
+  margin-right: 16px;
   text-decoration: none;
   font-size: 20px;
   color: #fff;
@@ -58,13 +62,9 @@ nav {
   padding: 8px;
 }
 
-.nav__link--primary {
+.nav__button--primary {
   border: 2px solid #1a093d;
   border-radius: 4px;
-}
-
-.logo__img--wrapper {
-  position: relative;
 }
 
 .logo {
