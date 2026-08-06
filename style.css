@@ -26,9 +26,20 @@ h1 {
   color: rgb(201, 20, 20);
 }
 
+h2 {
+  padding: 20px 0px;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
 .click {
   cursor: pointer;
   transition: all 300ms ease;
+}
+
+.black-txt {
+  color: rgb(10, 31, 68);
+  display: inline-block;
 }
 
 .animated-underline {
@@ -159,4 +170,71 @@ SEARCH BAR
 
 .input__wrap button:hover{
   color: #ff0000;
+}
+
+
+/* 
+
+LOADING BAR 
+
+*/
+
+.loading__bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(96, 48, 177, .38);
+}
+
+.loading__bar--first,
+.loading__bar--first:after,
+.loading__bar--second,
+.loading__bar--second:after,
+.loading__bar--third,
+.loading__bar--third:after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  will-change: transform;
+}
+
+.loading__bar--first,
+.loading__bar--second, 
+.loading__bar--third {
+  transform-origin: top left;
+}
+
+.loading__bar--first {
+  left: -55%;
+  animation: d 2s linear infinite;
+}
+
+
+/* 
+
+FILTERED RESULTS 
+
+*/
+
+.loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: red;
+}
+
+.fa-spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
