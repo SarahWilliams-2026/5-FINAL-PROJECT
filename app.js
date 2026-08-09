@@ -1,23 +1,25 @@
 // https://www.omdbapi.com/?i=tt3896198&apikey=97a8a533&s=${title}
+const movieListEl = document.querySelector(".movie-list");
 
 async function main() {
     const movieTitle = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=97a8a533&s=${"twilight"}`);
     const movieTitleData = await movieTitle.json();
-    const movieListEl = document.querySelector(".movie-list");
-    console.log(movieTitleData);
-    
-    movieListEl.innerHTML = movieTitleData
-        .map(
-            (movieTitle) => `<div class="movie-card">
-                <div class="movie-card__container">
-                    <h3>Movie Title</h3>
-                        <p><b>Type:</b> movie</p>
-                        <p><b>Year:</b> 0000</p>
-                    <p><b>Cover Art:</b> <a href="https://website.website" target="_blank">website.website</a></p>
-                </div>
-            </div>` 
-        )
-        .join("");
+    movieListEl.innerHTML = movieTitleData.Search.map((movieTitle) => movieHTML(movieTitle)).join("");
+
+    if (movieTitleData.Response === "False") {
+  movieListEl.innerHTML = "<p>No movies found.</p>";
+  return;
 }
 
 main();
+
+function movieHTML(movieTitle) {
+   return `<div class="movie-card">
+    <div class="movie-card__container">
+        <h3>${movie.Title}</h3>
+            <p><b>Type:</b> ${movie.Type}</p>
+            <p><b>Year:</b> ${movie.Year}</p>
+            <p><b>Cover Art:</b> <a href="${movie.Poster}" target="_blank">Poster</a></p>
+      </div>
+    </div>`;
+}
