@@ -2,19 +2,29 @@
 const movieListEl = document.querySelector(".movie-list");
 
 async function main() {
-    const movieTitle = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=97a8a533&s=${"twilight"}`);
-    const movieTitleData = await movieTitle.json();
-    movieListEl.innerHTML = movieTitleData.Search.map((movieTitle) => movieHTML(movieTitle)).join("");
+    const movie = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=97a8a533&s=${"twilight"}`);
+    const movieData = await movie.json();
 
-    if (movieTitleData.Response === "False") {
+    if (movieData.Response === "False") {
   movieListEl.innerHTML = "<p>No movies found.</p>";
   return;
+    }
+
+movieListEl.innerHTML = movieData.Search
+  .map((movie) => movieHTML(movie))
+  .join("");
 }
 
 main();
 
-function movieHTML(movieTitle) {
-   return `<div class="movie-card">
+function showMovieDetails(id) {
+    localStorage.setItem("id", id);
+    window.location.href = `${window.location.origin}/user.html`
+    console.log(window.location);
+}
+
+function movieHTML(movie) {
+   return `<div class="movie-card" onclick="showMovieDetails(${movie.id})">
     <div class="movie-card__container">
         <h3>${movie.Title}</h3>
             <p><b>Type:</b> ${movie.Type}</p>
@@ -23,3 +33,4 @@ function movieHTML(movieTitle) {
       </div>
     </div>`;
 }
+
