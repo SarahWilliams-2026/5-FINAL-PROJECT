@@ -24,7 +24,7 @@ function showMovieDetails(id) {
 }
 
 function movieHTML(movie) {
-   return `<div class="movie-card" onclick="showMovieDetails(${movie.id})">
+   return `<div class="movie-card" onclick="showMovieDetails(${movie})>
     <div class="movie-card__container">
         <h3>${movie.Title}</h3>
             <p><b>Type:</b> ${movie.Type}</p>
