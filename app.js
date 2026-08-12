@@ -24,13 +24,15 @@ function showMovieDetails(id) {
 }
 
 function movieHTML(movie) {
-   return `<div class="movie-card" onclick="showMovieDetails(${movie})>
-    <div class="movie-card__container">
+  return `
+    <div class="movie-card" onclick="showMovieDetails('${movie.imdbID}')">
+      <img class="movie-card__poster" src="${movie.Poster}" alt="${movie.Title} poster">
+      <div class="movie-card__container">
         <h3>${movie.Title}</h3>
-            <p><b>Type:</b> ${movie.Type}</p>
-            <p><b>Year:</b> ${movie.Year}</p>
-            <p><b>Cover Art:</b> <a href="${movie.Poster}" target="_blank">Poster</a></p>
+        <p><b>Type:</b> ${movie.Type}</p>
+        <p><b>Year:</b> ${movie.Year}</p>
       </div>
-    </div>`;
+    </div>
+  `;
 }
 
