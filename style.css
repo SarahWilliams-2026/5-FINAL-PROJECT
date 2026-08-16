@@ -283,15 +283,20 @@ FILTERED RESULTS
 }
 
 
-/* Title Page */
+/* 
 
-.post {
+Title Page 
+
+*/
+
+
+.title {
   border: 1px solid black;
   background-color: white;
   margin: 20px;
 }
 
-.post__title {
+.title__name {
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
@@ -299,11 +304,11 @@ FILTERED RESULTS
   padding: 8px;
 }
 
-.post__body {
+.title__body {
   padding: 0 8px;
 }
 
-.post__search {
+.title__search {
   margin-top: 16px;
   display: flex;
   justify-content: space-between;
@@ -311,11 +316,11 @@ FILTERED RESULTS
   padding: 0 20px;
 }
 
-.post__search--container {
+.title__search--container {
   display: flex;
   flex-direction: column;
 }
 
-.post__search--label {
+.title__search--label {
   padding-right: 8px;
 }
