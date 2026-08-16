@@ -1,25 +1,37 @@
 // https://www.omdbapi.com/?i=tt3896198&apikey=97a8a533&s=${title}
+
 const movieListEl = document.querySelector(".movie-list");
+const searchInput = document.querySelector("#site-search");
 
-async function main() {
-    const movie = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=97a8a533&s=${"twilight"}`);
-    const movieData = await movie.json();
+async function main(title = "twilight") {
+  const movie = await fetch(
+    `https://www.omdbapi.com/?apikey=97a8a533&s=${title}`
+  );
 
-    if (movieData.Response === "False") {
-  movieListEl.innerHTML = "<p>No movies found.</p>";
-  return;
-    }
+  const movieData = await movie.json();
 
-movieListEl.innerHTML = movieData.Search
-  .map((movie) => movieHTML(movie))
-  .join("");
+  if (movieData.Response === "False") {
+    movieListEl.innerHTML = "<p>No movies found.</p>";
+    return;
+  }
+
+  movieListEl.innerHTML = movieData.Search
+    .map((movie) => movieHTML(movie))
+    .join("");
+}
+
+function searchMovies(event) {
+  event.preventDefault();
+
+  const title = searchInput.value;
+  main(title);
 }
 
 main();
 
 function showMovieDetails(id) {
     localStorage.setItem("id", id);
-    window.location.href = `${window.location.origin}/user.html`
+    window.location.href = "user.html"
 }
 
 function movieHTML(movie) {

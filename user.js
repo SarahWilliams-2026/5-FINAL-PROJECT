@@ -1,9 +1,25 @@
-async function main() {
-    const id = localStorage.getItem("id")
-    const title = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=97a8a533&s=${title}`)
-    const titleData = await title.json();
+const titleListEl = document.querySelector('.title-list');
 
-    console.log(titleData)
+async function main() {
+  const id = localStorage.getItem("id");
+
+  const movie = await fetch(
+    `https://www.omdbapi.com/?apikey=97a8a533&i=${id}`
+  );
+
+  const movieData = await movie.json();
+  console.log(movieData);
+
+  titleListEl.innerHTML = movieData.map(title => 
+    `<div class="title">
+      <div class="title__name">
+        Title Name
+      </div>
+      <p class="title__body">
+        Title Body
+      </p>
+    </div>
+    `).join('');
 }
 
 main();

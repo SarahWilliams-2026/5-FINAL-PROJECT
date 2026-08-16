@@ -23,7 +23,7 @@
         </header>
         <div class="landing__content">
             <h1>Browse Our Movies</h1>
-            <form class="input__wrap" action="/search-results" method="GET" role="search">
+            <form class="input__wrap" onsubmit="searchMovies(event)" role="search">
                 <input type="search" id="site-search" name="q" placeholder="Search by title" required>
                 <button class="search__btn" type="submit">
                     <i class="fa fa-search"></i>
