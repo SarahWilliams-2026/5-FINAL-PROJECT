@@ -301,15 +301,16 @@ Title Page
 }
 
 .title__name {
-  font-size: 12px;
+  font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
   border-bottom: 1px solid black;
-  padding: 8px;
+  padding: 25px;
 }
 
 .title__body {
-  padding: 0 8px;
+  padding: 10px 20px;
+  font-size: 24px;
 }
 
 .title__search {
@@ -330,7 +331,42 @@ Title Page
 }
 
 .poster__img {
-  display: flex;
-  justify-content: center;
+  display: block;
+  margin: 0 auto;
   padding: 40px;
+}
+
+
+/* 
+
+FOOTER 
+
+*/
+
+
+.footer {
+  background-color: #2e2c2c;
+}
+
+.footer__container {
+  margin-bottom: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+}
+
+
+.footer__info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.footer__logo {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  left: 50px;
+  padding: 2px;
 }

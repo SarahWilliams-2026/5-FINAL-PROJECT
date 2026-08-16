@@ -12,17 +12,23 @@ async function main() {
 
 titleListEl.innerHTML = `
   <div class="title">
-    <img src="${movieData.Poster}" alt="${movieData.Title} poster">
+    <img
+        class="poster__img"
+        src="${movieData.Poster}"
+        alt="${movieData.Title} poster"
+    >
     <div class="title__name">
       ${movieData.Title}
     </div>
     <p class="title__body">
       ${movieData.Plot}
     </p>
-    <p><b>Year:</b> ${movieData.Year}</p>
-    <p><b>Rated:</b> ${movieData.Rated}</p>
-    <p><b>Genre:</b> ${movieData.Genre}</p>
-    <p><b>Runtime:</b> ${movieData.Runtime}</p>
+    <div class="other__info">
+     <p><b>Year:</b> ${movieData.Year}</p>
+     <p><b>Rated:</b> ${movieData.Rated}</p>
+     <p><b>Genre:</b> ${movieData.Genre}</p>
+     <p><b>Runtime:</b> ${movieData.Runtime}</p>
+    </div>
   </div>
 `;
 }
