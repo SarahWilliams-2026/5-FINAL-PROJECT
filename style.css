@@ -7,6 +7,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.title p {
+  color: #000;
+}
+
 body, html {
   max-width: 100vw;
   overflow-x: hidden;
@@ -292,7 +296,7 @@ Title Page
 
 .title {
   border: 1px solid black;
-  background-color: white;
+  background-color: rgb(136, 48, 48);
   margin: 20px;
 }
 
@@ -323,4 +327,10 @@ Title Page
 
 .title__search--label {
   padding-right: 8px;
+}
+
+.poster__img {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
 }
