@@ -298,6 +298,7 @@ Title Page
   border: 1px solid black;
   background-color: rgb(136, 48, 48);
   margin: 20px;
+  border-radius: 10px;
 }
 
 .title__name {
@@ -309,7 +310,7 @@ Title Page
 }
 
 .title__body {
-  padding: 10px 20px;
+  padding: 40px 20px;
   font-size: 24px;
 }
 
@@ -321,13 +322,19 @@ Title Page
   padding: 0 20px;
 }
 
-.title__search--container {
+.watch__btn--container {
   display: flex;
   flex-direction: column;
 }
 
-.title__search--label {
-  padding-right: 8px;
+.back__btn,
+.watch__btn {
+  background-color: #000;
+  color: #fff;
+  border-radius: 40px;
+  width: 100px;
+  border: none;
+  height: 60px;
 }
 
 .poster__img {
@@ -335,6 +342,15 @@ Title Page
   margin: 0 auto;
   padding: 40px;
 }
+
+.other__info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 24px;
+  padding: 40px;
+}
+
 
 
 /* 
