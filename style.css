@@ -13,8 +13,9 @@
 
 body, html {
   max-width: 100vw;
+  width: 100%;
   overflow-x: hidden;
-  background-color: #312b2b;
+  background-image: url("./Assets/spotlight.jpg");
 }
 
 #landing {
@@ -243,6 +244,14 @@ FILTERED RESULTS
   color: red;
 }
 
+.loading-state--spinner {
+  display: none !important;
+}
+
+.loading-state .loading-state--spinner {
+  display: block !important;
+}
+
 .fa-spinner {
   animation: rotate 600ms infinite linear;
 }
@@ -349,6 +358,20 @@ Title Page
   align-items: center;
   gap: 24px;
   padding: 40px;
+}
+
+.info__icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.bucket__icon {
+  width: 26px;
+  height: 26px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 

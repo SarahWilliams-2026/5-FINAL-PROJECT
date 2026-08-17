@@ -40,7 +40,7 @@ function movieHTML(movie) {
       <img class="movie-card__poster" src="${movie.Poster}" alt="${movie.Title} poster">
       <div class="movie-card__container">
         <h3>${movie.Title}</h3>
-        <p><b>Genre:</b> ${movie.Genre}</p>
+        <p><b>Rated:</b> ${movie.Rating}</p>
         <p><b>Year:</b> ${movie.Year}</p>
       </div>
     </div>
