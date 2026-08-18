@@ -2,22 +2,29 @@
 
 const movieListEl = document.querySelector(".movie-list");
 const searchInput = document.querySelector("#site-search");
+const loadingStateEl = document.querySelector(".loading-state");
+let currentMovies = [];
+
 
 async function main(title = "twilight") {
-  const movie = await fetch(
+  loadingStateEl.style.display = "flex";
+  movieListEl.innerHTML = "";
+
+  const response = await fetch(
     `https://www.omdbapi.com/?apikey=97a8a533&s=${title}`
   );
 
-  const movieData = await movie.json();
+  const movieData = await response.json();
+
+  loadingStateEl.style.display = "none";
 
   if (movieData.Response === "False") {
     movieListEl.innerHTML = "<p>No movies found.</p>";
     return;
   }
 
-  movieListEl.innerHTML = movieData.Search
-    .map((movie) => movieHTML(movie))
-    .join("");
+    currentMovies = movieData.Search;
+    renderMovies(currentMovies);
 }
 
 function searchMovies(event) {
@@ -28,6 +35,26 @@ function searchMovies(event) {
 }
 
 main();
+
+function renderMovies(movies) {
+  movieListEl.innerHTML = movies
+    .map((movie) => movieHTML(movie))
+    .join("");
+}
+
+function sortMovies(event) {
+  if (event.target.value === "NEWEST_TO_OLDEST") {
+    currentMovies.sort(
+      (a, b) => parseInt(b.Year) - parseInt(a.Year)
+    );
+  } else if (event.target.value === "OLDEST_TO_NEWEST") {
+    currentMovies.sort(
+      (a, b) => parseInt(a.Year) - parseInt(b.Year)
+    );
+  }
+
+  renderMovies(currentMovies);
+}
 
 function showMovieDetails(id) {
     localStorage.setItem("id", id);

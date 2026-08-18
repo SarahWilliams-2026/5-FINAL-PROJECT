@@ -38,6 +38,11 @@
                 <h2 class="search--info">
                     <span class="white-text">Search results</span>
                 </h2>
+                <select id="sort" onchange="sortMovies(event)">
+                    <option value="" disabled selected>Sort by year</option>
+                    <option value="NEWEST_TO_OLDEST">Newest to Oldest</option>
+                    <option value="OLDEST_TO_NEWEST">Oldest to Newest</option>
+                </select>
             </div>
             <div id="movies">
                 <div class="content-wrapper">
@@ -65,16 +70,17 @@
     </div>
   </div>
     
-</body>
-<footer>
-    <div class="footer__container">
-        <div class="footer__row"></div>
-        <figure>
-            <img class="footer__logo" src="./Assets/popcorn__logo.jpg" alt="">
-        </figure>
-        <div class="footer__info">
-            <p>Copyright © 2026 Sarah Williams</p>
-        </div>
+<footer class="footer">
+  <div class="footer__container">
+    <figure>
+      <img class="footer__logo" src="./Assets/popcorn__logo.jpg" alt="">
+    </figure>
+
+    <div class="footer__info">
+      <p>Copyright © 2026 Sarah Williams</p>
     </div>
+  </div>
 </footer>
+
+</body>
 </html>
