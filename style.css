@@ -385,5 +385,19 @@ FOOTER
   align-items: center;
 }
 
-/* Small tablets, phones */
+/* 
+
+SMALL TABLETS 
+
+*/
+
+@media (max-width: 722px) {
+  .movie-list {
+    padding: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 
