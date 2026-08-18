@@ -232,11 +232,11 @@ FILTERED RESULTS
 }
 
 #filter {
-  position: relative;
   padding: 40px 20px;
   display: flex;
-  flex-direction: column;
-  max-width: 150px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .movie-list {
@@ -269,8 +269,8 @@ FILTERED RESULTS
   height: auto;
 }
 
-.sort {
-  
+#sort {
+  margin-left: auto;
 }
 
 
@@ -316,8 +316,8 @@ Title Page
 
 .back__btn,
 .watch__btn {
-  background-color: #fff;
-  color: #000;
+  background-color: #312e2e;
+  color: #b6adad;
   border-radius: 40px;
   width: 100px;
   border: none;
@@ -384,3 +384,6 @@ FOOTER
   display: flex;
   align-items: center;
 }
+
+/* Small tablets, phones */
+

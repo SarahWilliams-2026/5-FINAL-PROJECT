@@ -23,9 +23,19 @@ async function main(title = "twilight") {
     return;
   }
 
-    currentMovies = movieData.Search;
-    renderMovies(currentMovies);
+    currentMovies = await Promise.all(
+  movieData.Search.map(async (movie) => {
+    const response = await fetch(
+      `https://www.omdbapi.com/?apikey=97a8a533&i=${movie.imdbID}`
+    );
+    return await response.json();
+  })
+);
+
+renderMovies(currentMovies);
 }
+
+
 
 function searchMovies(event) {
   event.preventDefault();
@@ -61,13 +71,14 @@ function showMovieDetails(id) {
     window.location.href = "user.html"
 }
 
+
 function movieHTML(movie) {
   return `
     <div class="movie-card" onclick="showMovieDetails('${movie.imdbID}')">
       <img class="movie-card__poster" src="${movie.Poster}" alt="${movie.Title} poster">
       <div class="movie-card__container">
         <h3>${movie.Title}</h3>
-        <p><b>Rated:</b> ${movie.Rating}</p>
+        <p><b>Rated:</b> ${movie.Rated}</p>
         <p><b>Year:</b> ${movie.Year}</p>
       </div>
     </div>
